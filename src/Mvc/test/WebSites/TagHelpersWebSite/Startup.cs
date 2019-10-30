@@ -3,6 +3,7 @@
 
 using System.IO;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,7 @@ namespace TagHelpersWebSite
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage();
             app.UseRouting();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
